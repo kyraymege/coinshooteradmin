@@ -9,10 +9,9 @@ function settings() {
                 allDocs.push(doc.id)
             })
             allDocs.forEach(element => {
-                db.collection("todayVotes").doc(element).set({
-                    coin_votes: 0,
+                db.collection("coins").doc(element).update({
+                    coin_todayVotes: 0,
                 })
-                console.log(element)
             });
         })
         
